@@ -64,6 +64,47 @@ namespace _3PR_Lab_9_CSharp
 		{
 			return countOfBuildings;
 		}
+
+		public static void array1Forming(Building[] array, int n)
+		{
+			for (int i = 1; i < n + 1; i++)
+			{
+				array[i - 1].setBuilding("Жилое здание", (float)i, (float)i, (float)i, i, i, i);
+			}
+		}
+
+		public static void array2Forming(Building[,] array, int n, int m)
+		{
+			for (int i = 1; i < n + 1; i++)
+			{
+				for (int j = 1; j < m + 1; j++)
+				{
+					array[i - 1, j - 1].setBuilding("Жилое здание", (float)(i + j), (float)(i + j), (float)(i + j), i + j, i + j, i + j);
+				}
+			}
+		}
+
+		public static void array1Output(Building[] array, int n)
+		{
+			for (int i = 0; i < n; i++)
+			{
+				Console.Write(array[i].sideLength + " ");
+			}
+			Console.WriteLine("\n");
+		}
+
+		public static void array2Output(Building[,] array, int n, int m)
+		{
+			for (int i = 0; i < n; i++)
+			{
+				for (int j = 0; j < m; j++)
+				{
+					Console.Write(array[i, j].sideLength + " ");
+				}
+				Console.WriteLine();
+			}
+			Console.WriteLine("\n");
+		}
 		/* Функция по выводу свойств экземпляра класса Building. */
 		public void getBuilding()
 		{
